@@ -52,7 +52,13 @@ public class Horarios {
         this.linhas = linhas;
     }
 
+    public String getSemana() {
+        return semana;
+    }
 
+    public void setSemana(String semana) {
+        this.semana = semana;
+    }
 
     @Override
     public boolean equals(Object o) {

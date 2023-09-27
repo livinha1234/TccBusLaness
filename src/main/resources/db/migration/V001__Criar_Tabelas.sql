@@ -7,7 +7,8 @@ create table linhas( -- tabela ligação linhas e horários
 create table horarios(
 idhorarios int not null primary key auto_increment,
 horarios TIME,
-idlinhas int not null
+idlinhas int not null,
+semana varchar(100)
 );
 
 
@@ -71,3 +72,7 @@ insert into linhas(linhas) values ('Linha 19');
 
 -- insert into tabela transportadora
 insert into transportadora(transportadora, idlinhas) values ('GRECCO',1);
+
+-- insert into tabela horários
+insert into horarios(horarios, idlinhas, semana) values('12:30', 1, 'Segunda e Terça')
+

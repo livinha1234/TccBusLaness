@@ -32,6 +32,7 @@ public class HorariosRepositoryImpl implements HorariosRepositoryQuery {
                 ,root.get("idhorarios")
                 ,root.get("horarios")
                 ,root.get("linhas").get("linhas")
+                ,root.get("semana").get("semana")
 
         ));
 
@@ -85,6 +86,12 @@ public class HorariosRepositoryImpl implements HorariosRepositoryQuery {
             predicates.add(builder.like(builder.lower(root.get("linhas").get("linhas")),
                     "%" + horariosFilter.getLinhas().toLowerCase() + "%"));
         }
+
+        if (!StringUtils.isEmpty(horariosFilter.getSemana())) {
+            predicates.add(builder.like(builder.lower(root.get("semana").get("semana")),
+                    "%" + horariosFilter.getSemana().toLowerCase() + "%"));
+        }
+
 
             return predicates.toArray((new Predicate[predicates.size()]));
     }

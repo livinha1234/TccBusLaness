@@ -7,6 +7,7 @@ public class HorariosFilter {
 
     private LocalTime horarios;
     private String linhas;
+    private String semana;
 
     public LocalTime getHorarios() {
         return horarios;
@@ -22,5 +23,13 @@ public class HorariosFilter {
 
     public void setLinhas(String linhas) {
         this.linhas = linhas;
+    }
+
+    public String getSemana() {
+        return semana;
+    }
+
+    public void setSemana(String semana) {
+        this.semana = semana;
     }
 }
