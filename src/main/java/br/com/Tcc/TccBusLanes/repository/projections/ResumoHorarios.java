@@ -4,11 +4,11 @@ import java.time.LocalTime;
 
 public class ResumoHorarios {
     private Integer idhorarios;
-    private LocalTime horarios;
+    private String horarios;
     private String linhas;
     private String semana;
 
-    public ResumoHorarios( Integer idhorarios, LocalTime horarios, String linhas, String semana) {
+    public ResumoHorarios( Integer idhorarios, String horarios, String linhas, String semana) {
         this.idhorarios = idhorarios;
         this.horarios = horarios;
         this.linhas = linhas;
@@ -23,11 +23,11 @@ public class ResumoHorarios {
         this.idhorarios = idhorarios;
     }
 
-    public LocalTime getHorarios() {
+    public String getHorarios() {
         return horarios;
     }
 
-    public void setHorarios(LocalTime horarios) {
+    public void setHorarios(String horarios) {
         this.horarios = horarios;
     }
 

@@ -19,25 +19,18 @@ public class Usuario {
     private String email;
     private String cidade;
     private String senha;
+    private String img;
 
     @JsonIgnore
     @OneToMany(mappedBy = "usuario" )
     public List<Rotas> rotas = new ArrayList<>();
 
-    public List<Rotas> getRotas() {
-        return rotas;
-    }
-
-    public void setRotas(List<Rotas> rotas) {
-        this.rotas = rotas;
-    }
-
-    public Long getId() {
+    public Long getIdusuario() {
         return idusuario;
     }
 
-    public void setId(Long id) {
-        this.idusuario = id;
+    public void setIdusuario(Long idusuario) {
+        this.idusuario = idusuario;
     }
 
     public String getNomeusuario() {
@@ -78,6 +71,22 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public List<Rotas> getRotas() {
+        return rotas;
+    }
+
+    public void setRotas(List<Rotas> rotas) {
+        this.rotas = rotas;
     }
 
     @Override

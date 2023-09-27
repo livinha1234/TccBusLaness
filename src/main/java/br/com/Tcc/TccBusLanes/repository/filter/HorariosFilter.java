@@ -5,15 +5,15 @@ import java.time.LocalTime;
 
 public class HorariosFilter {
 
-    private LocalTime horarios;
+    private String horarios;
     private String linhas;
     private String semana;
 
-    public LocalTime getHorarios() {
+    public String getHorarios() {
         return horarios;
     }
 
-    public void setHorarios(LocalTime horarios) {
+    public void setHorarios(String horarios) {
         this.horarios = horarios;
     }
 
