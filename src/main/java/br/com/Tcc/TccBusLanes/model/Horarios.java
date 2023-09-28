@@ -18,7 +18,7 @@ public class Horarios {
     private String horarios;
     private String semana;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "horarios_linhas",
             joinColumns =  @JoinColumn(name= "idhorarios"),

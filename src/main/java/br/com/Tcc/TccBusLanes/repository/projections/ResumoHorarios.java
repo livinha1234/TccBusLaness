@@ -1,7 +1,5 @@
 package br.com.Tcc.TccBusLanes.repository.projections;
 
-import java.time.LocalTime;
-
 public class ResumoHorarios {
     private Integer idhorarios;
     private String horarios;
