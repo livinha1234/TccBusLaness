@@ -31,8 +31,9 @@ public class HorariosRepositoryImpl implements HorariosRepositoryQuery {
         criteria.select(builder.construct(ResumoHorarios.class
                 ,root.get("idhorarios")
                 ,root.get("horarios")
+                ,root.get("semana")
                 ,root.get("linhas").get("linhas")
-                ,root.get("semana").get("semana")
+
 
         ));
 
@@ -88,7 +89,7 @@ public class HorariosRepositoryImpl implements HorariosRepositoryQuery {
         }
 
         if (!StringUtils.isEmpty(horariosFilter.getSemana())) {
-            predicates.add(builder.like(builder.lower(root.get("semana").get("semana")),
+            predicates.add(builder.like(builder.lower(root.get("semana")),
                     "%" + horariosFilter.getSemana().toLowerCase() + "%"));
         }
 

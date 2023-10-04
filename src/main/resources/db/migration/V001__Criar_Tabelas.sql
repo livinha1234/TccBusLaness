@@ -8,13 +8,9 @@ create table horarios(
 idhorarios int not null primary key auto_increment,
 horarios varchar(2000),
 idlinhas int not null,
-semana varchar(200)
-);
+semana varchar(200) not null
 
-create table horarios_linhas(
-idhorarios int not null,
-idlinhas int not null ,
-primary key(idhorarios, idlinhas)
+
 );
 
 
@@ -55,8 +51,6 @@ create table pontos(
 );
 
 --  Foreign key das tabelas
-Alter table horarios_linhas add constraint FK_horarios_linhas_horarios Foreign key (idhorarios)  references horarios(idhorarios);
-Alter table horarios_linhas add constraint FK_horarios_linhas_linhas Foreign key (idlinhas)  references linhas(idlinhas);
 Alter table horarios add constraint FK_horarios_linhas Foreign Key(idlinhas)references linhas(idlinhas);
 Alter table pontos add constraint FK_pontos_linhas foreign key (idlinhas) references linhas(idlinhas);
 Alter table localizacao add constraint FK_localizacao_transportadora foreign key (idtrans) references transportadora(idtrans);
@@ -81,6 +75,8 @@ insert into linhas(linhas) values ('Linha 19');
 insert into transportadora(transportadora, idlinhas) values ('GRECCO',1);
 
 -- insert into tabela horários
+-- fazer um por um
+
 insert into horarios(horarios, idlinhas, semana) values('08:00 - 16:40', 1, 'Segunda á Sábado - Terminal Urbano(centro)');
 insert into horarios(horarios, idlinhas, semana) values('08:15 - 17:00', 1, 'Segunda á Sábado - São Judas Tadeu');
 insert into horarios(horarios, idlinhas, semana) values('06:40 - 12:00 - 17:00', 2, 'Segunda á Sábado - Terminal Urbano (centro)');
@@ -121,8 +117,3 @@ insert into horarios(horarios, idlinhas, semana) values('06:25 - 07:25 - 08:25 -
 insert into horarios(horarios, idlinhas, semana) values('06:10 - 06:50 - 07:10 - 07:50 - 08:10 - 08:50 - 09:10 - 09:50 - 10:10 - 10:50 - 11:10 - 11:50 - 12:15 - 12:50 - 13:15 - 13:50 - 14:15 - 14:50 - 15:15 - 15:50 - 16:15 - 16:50 - 17:15 - 17:50 - 18:15 - 18:53', 10, 'Segunda á Sábado - Terminal Urbano (centro)');
 insert into horarios(horarios, idlinhas, semana) values('06:00 - 06:55 - 07:55 - 08:55 - 09:55 - 10:55 - 11:55 - 12:55 - 13:00 - 14:00 - 15:00 - 16:00 - 17:00 - 18:00 - 19:00', 10, 'Segunda á Sábado - Júlio Ferrari');
 
--- insert horarios_linhas
-insert into horarios_linhas (idhorarios, idlinhas) values (1,1);
-insert into horarios_linhas (idhorarios, idlinhas) values (2,1);
-insert into horarios_linhas (idhorarios, idlinhas) values (3,2);
-insert into horarios_linhas (idhorarios, idlinhas) values (4,2); -- continuar
