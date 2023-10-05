@@ -3,7 +3,7 @@ package br.com.Tcc.TccBusLanes.resource;
 import br.com.Tcc.TccBusLanes.model.Horarios;
 import br.com.Tcc.TccBusLanes.repository.HorariosRepository;
 import br.com.Tcc.TccBusLanes.repository.filter.HorariosFilter;
-import br.com.Tcc.TccBusLanes.repository.projections.ResumoHorarios;
+import br.com.Tcc.TccBusLanes.repository.projections.ResumoLinhas;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,7 +25,7 @@ public class HorariosResource {
     }
 
     @GetMapping()
-    public Page<ResumoHorarios> pesquisar(HorariosFilter horariosFilter, Pageable pageable) {
+    public Page<Horarios> pesquisar(HorariosFilter horariosFilter, Pageable pageable) {
         return horariosRepository.filtrar(horariosFilter, pageable);
     }
 

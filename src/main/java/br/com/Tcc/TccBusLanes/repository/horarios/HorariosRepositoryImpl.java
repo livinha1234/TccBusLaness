@@ -2,7 +2,7 @@ package br.com.Tcc.TccBusLanes.repository.horarios;
 
 import br.com.Tcc.TccBusLanes.model.Horarios;
 import br.com.Tcc.TccBusLanes.repository.filter.HorariosFilter;
-import br.com.Tcc.TccBusLanes.repository.projections.ResumoHorarios;
+import br.com.Tcc.TccBusLanes.repository.projections.ResumoLinhas;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -22,26 +22,16 @@ public class HorariosRepositoryImpl implements HorariosRepositoryQuery {
     @PersistenceContext
     private EntityManager manager;
 
-    @Override
-    public Page<ResumoHorarios> filtrar(HorariosFilter horariosFilter, Pageable pageable) {
+    public Page<Horarios> filtrar(HorariosFilter horariosFilter, Pageable pageable) {
         CriteriaBuilder builder = manager.getCriteriaBuilder();
-        CriteriaQuery<ResumoHorarios> criteria = builder.createQuery(ResumoHorarios.class);
+        CriteriaQuery<Horarios> criteria = builder.createQuery(Horarios.class);
         Root<Horarios> root = criteria.from(Horarios.class);
-
-        criteria.select(builder.construct(ResumoHorarios.class
-                ,root.get("idhorarios")
-                ,root.get("horarios")
-                ,root.get("semana")
-                ,root.get("linhas").get("linhas")
-
-
-        ));
 
         Predicate[] predicates = criarRestricoes(horariosFilter, builder, root);
         criteria.where(predicates);
         criteria.orderBy(builder.asc(root.get("horarios")));
 
-        TypedQuery<ResumoHorarios> query = manager.createQuery(criteria);
+        TypedQuery<Horarios> query = manager.createQuery(criteria);
         adicionarRestricoesDePaginacao(query, pageable);
 
 
@@ -49,7 +39,7 @@ public class HorariosRepositoryImpl implements HorariosRepositoryQuery {
 
     }
 
-    private void adicionarRestricoesDePaginacao(TypedQuery<?> query, Pageable pageable) {
+    private void adicionarRestricoesDePaginacao(TypedQuery<Horarios> query, Pageable pageable) {
         int paginaAtual = pageable.getPageNumber();
         int totalRegistrosPorPagina = pageable.getPageSize();
         int primeiroregistroDaPagina = paginaAtual * totalRegistrosPorPagina;
@@ -74,23 +64,14 @@ public class HorariosRepositoryImpl implements HorariosRepositoryQuery {
     private Predicate[] criarRestricoes(HorariosFilter horariosFilter, CriteriaBuilder builder, Root<Horarios> root) {
         List<Predicate> predicates = new ArrayList<>();
 
-        if(horariosFilter.getHorarios() != null){
-            predicates.add(builder.greaterThanOrEqualTo(root.get("horarios"),
-                    horariosFilter.getHorarios()));
-        }
-        if(horariosFilter.getHorarios() != null){
-            predicates.add(builder.lessThanOrEqualTo(root.get("horarios"),
-                   horariosFilter.getHorarios()));
+        if (!StringUtils.isEmpty(horariosFilter.getHorarios())) {
+            predicates.add(builder.like(builder.lower(root.get("horarios")),
+                    "%" + horariosFilter.getHorarios().toLowerCase() + "%"));
         }
 
-        if (!StringUtils.isEmpty(horariosFilter.getLinhas())) {
-            predicates.add(builder.like(builder.lower(root.get("linhas").get("linhas")),
-                    "%" + horariosFilter.getLinhas().toLowerCase() + "%"));
-        }
-
-        if (!StringUtils.isEmpty(horariosFilter.getSemana())) {
+        if (!StringUtils.isEmpty(horariosFilter.getHorarios())) {
             predicates.add(builder.like(builder.lower(root.get("semana")),
-                    "%" + horariosFilter.getSemana().toLowerCase() + "%"));
+                    "%" + horariosFilter.getHorarios().toLowerCase() + "%"));
         }
 
 

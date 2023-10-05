@@ -5,6 +5,7 @@ import br.com.Tcc.TccBusLanes.model.Linhas;
 import br.com.Tcc.TccBusLanes.repository.HorariosRepository;
 import br.com.Tcc.TccBusLanes.repository.LinhasRepository;
 import br.com.Tcc.TccBusLanes.repository.filter.LinhasFilter;
+import br.com.Tcc.TccBusLanes.repository.projections.ResumoLinhas;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -26,7 +27,7 @@ public class LinhasResource {
     }
 
     @GetMapping()
-    public Page<Linhas> pesquisar(LinhasFilter linhasFilter, Pageable pageable) {
+    public Page<ResumoLinhas> pesquisar(LinhasFilter linhasFilter, Pageable pageable) {
         return linhasRepository.filtrar(linhasFilter, pageable);
     }
 }

@@ -1,13 +1,7 @@
 package br.com.Tcc.TccBusLanes.repository.rotas;
 
-import br.com.Tcc.TccBusLanes.model.Horarios;
-import br.com.Tcc.TccBusLanes.model.Pontos;
 import br.com.Tcc.TccBusLanes.model.Rotas;
-import br.com.Tcc.TccBusLanes.repository.filter.HorariosFilter;
 import br.com.Tcc.TccBusLanes.repository.filter.RotasFilter;
-import br.com.Tcc.TccBusLanes.repository.horarios.HorariosRepositoryQuery;
-import br.com.Tcc.TccBusLanes.repository.pontos.PontosRepositoryQuery;
-import br.com.Tcc.TccBusLanes.repository.projections.ResumoHorarios;
 import br.com.Tcc.TccBusLanes.repository.projections.ResumoRotas;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

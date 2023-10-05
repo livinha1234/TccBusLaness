@@ -1,15 +1,14 @@
 create table linhas( -- tabela ligação linhas e horários
     idlinhas int not null primary key auto_increment,
-    linhas varchar(200)
+    linhas varchar(200),
+    idhorarios int not null
 );
 
 
 create table horarios(
 idhorarios int not null primary key auto_increment,
 horarios varchar(2000),
-idlinhas int not null,
 semana varchar(200) not null
-
 
 );
 
@@ -51,7 +50,7 @@ create table pontos(
 );
 
 --  Foreign key das tabelas
-Alter table horarios add constraint FK_horarios_linhas Foreign Key(idlinhas)references linhas(idlinhas);
+Alter table linhas add constraint FK_linhas_horarios Foreign Key(idhorarios)references horarios(idhorarios);
 Alter table pontos add constraint FK_pontos_linhas foreign key (idlinhas) references linhas(idlinhas);
 Alter table localizacao add constraint FK_localizacao_transportadora foreign key (idtrans) references transportadora(idtrans);
 Alter table rotas add constraint FK_rotas_usuario foreign key (idusuario) references usuario(idusuario);
@@ -76,16 +75,17 @@ insert into transportadora(transportadora, idlinhas) values ('GRECCO',1);
 
 -- insert into tabela horários
 -- fazer um por um
-
-insert into horarios(horarios, idlinhas, semana) values('08:00 - 16:40', 1, 'Segunda á Sábado - Terminal Urbano(centro)');
-insert into horarios(horarios, idlinhas, semana) values('08:15 - 17:00', 1, 'Segunda á Sábado - São Judas Tadeu');
-insert into horarios(horarios, idlinhas, semana) values('06:40 - 12:00 - 17:00', 2, 'Segunda á Sábado - Terminal Urbano (centro)');
-insert into horarios(horarios, idlinhas, semana) values('07:25 - 12:25 - 17:55', 2, 'Segunda á Sábado - Alfredo Guedes');
-insert into horarios(horarios, idlinhas, semana) values('08:10 - 17:40', 2, 'Domingo e Feriado - Terminal Urbano (centro)');
-insert into horarios(horarios, idlinhas, semana) values('08:30 - 18:10', 2, 'Domingo e Feriado - Alfredo Guedes');
-insert into horarios(horarios, idlinhas, semana) values('06:00 - 08:00 - 10:00 - 12:00 - 14:00 - 16:00 - 18:10', 3, 'Segunda á Sábado - ETEC');
-insert into horarios(horarios, idlinhas, semana) values('06:35 - 07:20 - 08:35 - 09:20 - 10:35 - 11:20 - 12:35 - 13:20 - 14:35 - 15:20 - 16:35 - 17:40 - 18:50 - 19:20', 3, 'Segunda á Sábado - Terminal Urbano (centro)');
-insert into horarios(horarios, idlinhas, semana) values('06:00 - 08:00 - 10:00 - 12:00 - 14:00 - 16:00 - 18:10', 3, 'Segunda á Sábado - ETEC');
+insert into horarios(horarios, semana) values('08:00', 'Segunda á Sábado - Terminal Urbano(centro)');
+insert into horarios(horarios, semana) values('16:40','Segunda á Sábado - Terminal Urbano(centro)');
+-- continuar
+insert into horarios(horarios, semana) values('08:15 - 17:00', 1, 'Segunda á Sábado - São Judas Tadeu');
+insert into horarios(horarios, semana) values('06:40 - 12:00 - 17:00', 2, 'Segunda á Sábado - Terminal Urbano (centro)');
+insert into horarios(horarios, semana) values('07:25 - 12:25 - 17:55', 2, 'Segunda á Sábado - Alfredo Guedes');
+insert into horarios(horarios, semana) values('08:10 - 17:40', 2, 'Domingo e Feriado - Terminal Urbano (centro)');
+insert into horarios(horarios, semana) values('08:30 - 18:10', 2, 'Domingo e Feriado - Alfredo Guedes');
+insert into horarios(horarios,semana) values('06:00 - 08:00 - 10:00 - 12:00 - 14:00 - 16:00 - 18:10', 3, 'Segunda á Sábado - ETEC');
+insert into horarios(horarios, semana) values('06:35 - 07:20 - 08:35 - 09:20 - 10:35 - 11:20 - 12:35 - 13:20 - 14:35 - 15:20 - 16:35 - 17:40 - 18:50 - 19:20', 3, 'Segunda á Sábado - Terminal Urbano (centro)');
+insert into horarios(horarios, semana) values('06:00 - 08:00 - 10:00 - 12:00 - 14:00 - 16:00 - 18:10', 3, 'Segunda á Sábado - ETEC');
 insert into horarios(horarios, idlinhas, semana) values('07:05 - 09:10 - 11:10 - 13:10 - 15:10 - 17:30 - 19:10', 3, 'Segunda á Sábado - Rodoviária');
 insert into horarios(horarios, idlinhas, semana) values('05:00 - 06:00 - 17:00 - 08:00 - 09:00 - 10:00 - 11:00 - 12:00 - 13:00 - 14:00 - 15:00 - 16:00 - 17:00 - 18:00 - 19:00 - 20:00 - 21:00 - 22:00 - 23:00', 4, 'Segunda á Sábado - Monte Azul');
 insert into horarios(horarios, idlinhas, semana) values('05:16 - 05:40 - 06:16 - 06:40 - 07:20 - 07:40 - 08:20 - 08:40 - 09:20 - 09:40 - 10:20 - 10:40 - 11:20 - 11:40 - 12:20 - 12:40 - 13:20 - 13:40 - 14:20 - 14:40 - 15:20 - 15:40 - 16:20 - 16:40 - 17:20 - 17:40 - 18:20 - 18:40 - 19:20 - 19:40 - 20:20 - 20:40 - 21:20 - 21:40 - 22:20 - 22:40 - 23:20 - 23:40', 4, 'Segunda á Sábado - Terminal Urbano (centro)');
@@ -116,4 +116,3 @@ insert into horarios(horarios, idlinhas, semana) values('11:40', 9, 'Segunda á 
 insert into horarios(horarios, idlinhas, semana) values('06:25 - 07:25 - 08:25 - 09:25 - 10:25 - 11:33 - 12:30 - 13:30 - 14:30 - 15:30 - 16:33 - 17:33 - 18:35 - 19:00', 10, 'Segunda á Sábado - ETEC');
 insert into horarios(horarios, idlinhas, semana) values('06:10 - 06:50 - 07:10 - 07:50 - 08:10 - 08:50 - 09:10 - 09:50 - 10:10 - 10:50 - 11:10 - 11:50 - 12:15 - 12:50 - 13:15 - 13:50 - 14:15 - 14:50 - 15:15 - 15:50 - 16:15 - 16:50 - 17:15 - 17:50 - 18:15 - 18:53', 10, 'Segunda á Sábado - Terminal Urbano (centro)');
 insert into horarios(horarios, idlinhas, semana) values('06:00 - 06:55 - 07:55 - 08:55 - 09:55 - 10:55 - 11:55 - 12:55 - 13:00 - 14:00 - 15:00 - 16:00 - 17:00 - 18:00 - 19:00', 10, 'Segunda á Sábado - Júlio Ferrari');
-

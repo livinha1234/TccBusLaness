@@ -20,8 +20,8 @@ public class Linhas {
    @OneToMany(mappedBy = "linhas")
    private List<Pontos> pontos;
 
-    @OneToMany(mappedBy = "horarios")
-    private List<Horarios> horariosLinhas;
-
+    @ManyToOne
+    @JoinColumn(name = "idhorarios")
+    private Horarios horarios;
 
 }

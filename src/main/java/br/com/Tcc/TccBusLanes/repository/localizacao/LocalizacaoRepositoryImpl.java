@@ -1,15 +1,8 @@
 package br.com.Tcc.TccBusLanes.repository.localizacao;
 
-import br.com.Tcc.TccBusLanes.model.Horarios;
-import br.com.Tcc.TccBusLanes.model.Linhas;
 import br.com.Tcc.TccBusLanes.model.Localizacao;
-import br.com.Tcc.TccBusLanes.repository.filter.HorariosFilter;
-import br.com.Tcc.TccBusLanes.repository.filter.LinhasFilter;
 import br.com.Tcc.TccBusLanes.repository.filter.LocalizacaoFilter;
-import br.com.Tcc.TccBusLanes.repository.horarios.HorariosRepositoryQuery;
-import br.com.Tcc.TccBusLanes.repository.projections.ResumoHorarios;
 import br.com.Tcc.TccBusLanes.repository.projections.ResumoLocalizacao;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;

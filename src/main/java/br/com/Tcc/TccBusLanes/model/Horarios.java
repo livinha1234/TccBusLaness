@@ -2,6 +2,7 @@ package br.com.Tcc.TccBusLanes.model;
 
 import lombok.Data;
 import javax.persistence.*;
+import java.util.List;
 
 
 @Data
@@ -14,7 +15,6 @@ public class Horarios {
     private String horarios;
     private String semana;
 
-    @ManyToOne
-    @JoinColumn(name = "idlinhas")
-    private Linhas linhas;
+    @OneToMany(mappedBy = "linhas")
+    private List<Linhas> Linhas;
 }

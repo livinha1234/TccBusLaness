@@ -6,7 +6,6 @@ import java.time.LocalTime;
 public class HorariosFilter {
 
     private String horarios;
-    private String linhas;
     private String semana;
 
     public String getHorarios() {
@@ -15,14 +14,6 @@ public class HorariosFilter {
 
     public void setHorarios(String horarios) {
         this.horarios = horarios;
-    }
-
-    public String getLinhas() {
-        return linhas;
-    }
-
-    public void setLinhas(String linhas) {
-        this.linhas = linhas;
     }
 
     public String getSemana() {
