@@ -683,7 +683,7 @@ insert into linhas(linhas, idhorarios) values ('Linha 19',304);
 insert into linhas(linhas, idhorarios) values ('Linha 19',305);
 
 
-insert into usuario(nomeusuario, telefone, email ,cidade, senha, img) values ('Carlos', '1313687', 'carlao@gmail.com', 'Bauru', '123', '../../assets/modelo.png')
+insert into usuario(nomeusuario, telefone, email ,cidade, senha, img) values ('Carlos', '1313687', 'carlao@gmail.com', 'Bauru', '123', '../../assets/modelo.jpg')
 
 
 
