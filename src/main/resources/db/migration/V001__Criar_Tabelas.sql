@@ -150,7 +150,7 @@ insert into horarios(horarios,semana) values('22:20',  'Segunda á Sábado - Ter
 insert into horarios(horarios,semana) values('22:40',  'Segunda á Sábado - Terminal Urbano (centro)');
 insert into horarios(horarios,semana) values('23:20',  'Segunda á Sábado - Terminal Urbano (centro)');
 insert into horarios(horarios,semana) values('23:40',  'Segunda á Sábado - Terminal Urbano (centro)');
-insert into horarios(horarios,semana) values('05:25',  'Segunda á Sábado - Jílio Ferrari');
+insert into horarios(horarios,semana) values('05:25',  'Segunda á Sábado - Júlio Ferrari');
 insert into horarios(horarios,semana) values('06:30',  'Segunda á Sábado - Jílio Ferrari');
 insert into horarios(horarios,semana) values('07:30',  'Segunda á Sábado - Jílio Ferrari');
 insert into horarios(horarios,semana) values('08:30',  'Segunda á Sábado - Jílio Ferrari');
