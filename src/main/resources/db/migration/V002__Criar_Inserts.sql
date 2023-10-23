@@ -627,3 +627,20 @@ insert into usuario(nomeusuario, telefone, email ,cidade, senha, img) values ('C
 
 
 insert into pontos(lat,lng) values (-22.598846013100346, -48.79267247677574);
+insert into pontos(lat,lng) values (-22.613496872282262, -48.80050887787673);
+insert into pontos(lat,lng) values (-22.607793293529824,-48.80561345997716);
+insert into pontos(lat,lng) values ( -22.583447795650127,-48.80798646884565);
+insert into pontos(lat,lng) values ( -22.625587709246492, -48.79120994065258);
+insert into pontos(lat,lng) values ( -22.62588196721611, -48.787840012935455);
+insert into pontos(lat,lng) values ( -22.623929327569748,-48.788373308590714);
+insert into pontos(lat,lng) values ( -22.62220126860164,-48.787527094534084);
+insert into pontos(lat,lng) values ( -22.622426875802326,-48.79251339457737);
+insert into pontos(lat,lng) values ( -22.62099021775575, -48.789357405540365);
+
+
+
+
+
+
+
+
