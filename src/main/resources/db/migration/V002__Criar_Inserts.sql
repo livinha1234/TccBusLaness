@@ -657,6 +657,36 @@ insert into pontos(lat,lng) values (-22.57590491488931,-48.816991996631195);
 insert into pontos(lat,lng) values (-22.57754902555634,-48.815296564593574);
 insert into pontos(lat,lng) values (-22.577247244694753,-48.81551719418729);
 insert into pontos(lat,lng) values (-22.62421177533416,-48.79248765205062);
+insert into pontos(lat,lng) values (-22.623716809228725, -48.79306817043952);
+insert into pontos(lat,lng) values ( -22.607974453192707, -48.80484327087303);
+insert into pontos(lat,lng) values (-22.60512436507904,  -48.80458349876632);
+insert into pontos(lat,lng) values (-22.603339907045154, -48.809336752842924);
+insert into pontos(lat,lng) values (-22.60566658443118,  -48.81027477411886);
+insert into pontos(lat,lng) values (-22.590833875685423,-48.78380701386625);
+insert into pontos(lat,lng) values (-22.604021896174906,-48.80621820838937);
+insert into pontos(lat,lng) values (-22.599390866232643,-48.78428589593086);
+insert into pontos(lat,lng) values (-22.598894022245155,-48.78581641103319);
+insert into pontos(lat,lng) values ( -22.600015131688327, -48.78202985604387);
+insert into pontos(lat,lng) values ( -22.59952995243331, -48.781489446792904);
+insert into pontos(lat,lng) values ( -22.599180872756047, -48.7811157214681);
+insert into pontos(lat,lng) values (  -22.60222274201286, -48.78456930006808);
+insert into pontos(lat,lng) values ( -22.601548036501924,  -48.78703730087054);
+insert into pontos(lat,lng) values (-22.597626606605857,-48.782268255546434);
+insert into pontos(lat,lng) values ( -22.601146037411944,-48.78334766318692);
+insert into pontos(lat,lng) values (-22.60586531428776,-48.78672742269929);
+insert into pontos(lat,lng) values ( -22.613967123005935,-48.79296494595997);
+insert into pontos(lat,lng) values (-22.612812491973774,-48.791561551026135);
+insert into pontos(lat,lng) values (-22.604249883557735,-48.79997668921793);
+insert into pontos(lat,lng) values ( -22.603931140026123,-48.80085720703503);
+insert into pontos(lat,lng) values (-22.610122039297156,-48.80212306920289);
+insert into pontos(lat,lng) values (-22.60532298539124, -48.802348977369725);
+insert into pontos(lat,lng) values (-22.613414363520892, -48.789790033855034);
+insert into pontos(lat,lng) values (-22.614756570387566,  -48.78375621609792);
+insert into pontos(lat,lng) values (-22.615611566413012,  -48.78421629744576);
+insert into pontos(lat,lng) values (-22.61050696711827,  -48.80284459785568);
+insert into pontos(lat,lng) values (-22.580283435078197,  -48.80831524858139);
+insert into pontos(lat,lng) values ( -22.58428835288636, -48.81351816904853);
+insert into pontos(lat,lng) values ( -22.58226962463717, -48.81525698697291);
 
 
 
