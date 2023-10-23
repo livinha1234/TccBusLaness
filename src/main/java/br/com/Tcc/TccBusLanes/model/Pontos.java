@@ -13,7 +13,8 @@ public class Pontos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idpontos;
-    private double pontos;
+    private long lat;
+    private long lgn;
 
 
     @ManyToOne
